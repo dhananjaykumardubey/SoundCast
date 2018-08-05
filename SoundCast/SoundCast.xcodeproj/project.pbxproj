@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88B440DBD97420CB20623A57 /* Pods_SoundCastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3727FC6C889BE2C1D29C9B /* Pods_SoundCastTests.framework */; };
+		917E32F92117744500669656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917E32F82117744500669656 /* AppDelegate.swift */; };
+		917E32FB2117744500669656 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917E32FA2117744500669656 /* ViewController.swift */; };
+		917E32FE2117744500669656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 917E32FC2117744500669656 /* Main.storyboard */; };
+		917E33002117744600669656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 917E32FF2117744600669656 /* Assets.xcassets */; };
+		917E33032117744600669656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 917E33012117744600669656 /* LaunchScreen.storyboard */; };
+		917E330E2117744600669656 /* SoundCastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917E330D2117744600669656 /* SoundCastTests.swift */; };
+		BBDB1614E30D243E7D13519F /* Pods_SoundCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF1E27642931C5A47974519 /* Pods_SoundCast.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		917E330A2117744600669656 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 917E32ED2117744500669656 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 917E32F42117744500669656;
+			remoteInfo = SoundCast;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24F12ADD95C605C6B88382D0 /* Pods-SoundCast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCast/Pods-SoundCast.debug.xcconfig"; sourceTree = "<group>"; };
+		5368F07C1F86768ECC14DCEA /* Pods-SoundCastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCastTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCastTests/Pods-SoundCastTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7CF1E27642931C5A47974519 /* Pods_SoundCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F304255C193ED0D9D66FAE4 /* Pods-SoundCast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCast.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCast/Pods-SoundCast.release.xcconfig"; sourceTree = "<group>"; };
+		917E32F52117744500669656 /* SoundCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		917E32F82117744500669656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		917E32FA2117744500669656 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		917E32FD2117744500669656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		917E32FF2117744600669656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		917E33022117744600669656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		917E33042117744600669656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		917E33092117744600669656 /* SoundCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundCastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		917E330D2117744600669656 /* SoundCastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCastTests.swift; sourceTree = "<group>"; };
+		917E330F2117744600669656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D3727FC6C889BE2C1D29C9B /* Pods_SoundCastTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundCastTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD9465F9E9E99D63F777C311 /* Pods-SoundCastTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCastTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCastTests/Pods-SoundCastTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		917E32F22117744500669656 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBDB1614E30D243E7D13519F /* Pods_SoundCast.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		917E33062117744600669656 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88B440DBD97420CB20623A57 /* Pods_SoundCastTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A53D2FCAD68192889461BF5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				24F12ADD95C605C6B88382D0 /* Pods-SoundCast.debug.xcconfig */,
+				7F304255C193ED0D9D66FAE4 /* Pods-SoundCast.release.xcconfig */,
+				5368F07C1F86768ECC14DCEA /* Pods-SoundCastTests.debug.xcconfig */,
+				AD9465F9E9E99D63F777C311 /* Pods-SoundCastTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		917E32EC2117744500669656 = {
+			isa = PBXGroup;
+			children = (
+				917E32F72117744500669656 /* SoundCast */,
+				917E330C2117744600669656 /* SoundCastTests */,
+				917E32F62117744500669656 /* Products */,
+				8A53D2FCAD68192889461BF5 /* Pods */,
+				BB824015B00ACCA0A30612D3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		917E32F62117744500669656 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				917E32F52117744500669656 /* SoundCast.app */,
+				917E33092117744600669656 /* SoundCastTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		917E32F72117744500669656 /* SoundCast */ = {
+			isa = PBXGroup;
+			children = (
+				917E32F82117744500669656 /* AppDelegate.swift */,
+				917E32FA2117744500669656 /* ViewController.swift */,
+				917E32FC2117744500669656 /* Main.storyboard */,
+				917E32FF2117744600669656 /* Assets.xcassets */,
+				917E33012117744600669656 /* LaunchScreen.storyboard */,
+				917E33042117744600669656 /* Info.plist */,
+			);
+			path = SoundCast;
+			sourceTree = "<group>";
+		};
+		917E330C2117744600669656 /* SoundCastTests */ = {
+			isa = PBXGroup;
+			children = (
+				917E330D2117744600669656 /* SoundCastTests.swift */,
+				917E330F2117744600669656 /* Info.plist */,
+			);
+			path = SoundCastTests;
+			sourceTree = "<group>";
+		};
+		BB824015B00ACCA0A30612D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CF1E27642931C5A47974519 /* Pods_SoundCast.framework */,
+				9D3727FC6C889BE2C1D29C9B /* Pods_SoundCastTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		917E32F42117744500669656 /* SoundCast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 917E33122117744600669656 /* Build configuration list for PBXNativeTarget "SoundCast" */;
+			buildPhases = (
+				00E6A00A9712940A72DC4B2A /* [CP] Check Pods Manifest.lock */,
+				917E32F12117744500669656 /* Sources */,
+				917E32F22117744500669656 /* Frameworks */,
+				917E32F32117744500669656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoundCast;
+			productName = SoundCast;
+			productReference = 917E32F52117744500669656 /* SoundCast.app */;
+			productType = "com.apple.product-type.application";
+		};
+		917E33082117744600669656 /* SoundCastTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 917E33152117744600669656 /* Build configuration list for PBXNativeTarget "SoundCastTests" */;
+			buildPhases = (
+				2D276FD8B12C83960A0D11B4 /* [CP] Check Pods Manifest.lock */,
+				917E33052117744600669656 /* Sources */,
+				917E33062117744600669656 /* Frameworks */,
+				917E33072117744600669656 /* Resources */,
+				2214A1DD95D1DB7A58220077 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				917E330B2117744600669656 /* PBXTargetDependency */,
+			);
+			name = SoundCastTests;
+			productName = SoundCastTests;
+			productReference = 917E33092117744600669656 /* SoundCastTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		917E32ED2117744500669656 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Dhananjay Kumar Dubey";
+				TargetAttributes = {
+					917E32F42117744500669656 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					917E33082117744600669656 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 917E32F42117744500669656;
+					};
+				};
+			};
+			buildConfigurationList = 917E32F02117744500669656 /* Build configuration list for PBXProject "SoundCast" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 917E32EC2117744500669656;
+			productRefGroup = 917E32F62117744500669656 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				917E32F42117744500669656 /* SoundCast */,
+				917E33082117744600669656 /* SoundCastTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		917E32F32117744500669656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				917E33032117744600669656 /* LaunchScreen.storyboard in Resources */,
+				917E33002117744600669656 /* Assets.xcassets in Resources */,
+				917E32FE2117744500669656 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		917E33072117744600669656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00E6A00A9712940A72DC4B2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoundCast-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2214A1DD95D1DB7A58220077 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SoundCastTests/Pods-SoundCastTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoundCastTests/Pods-SoundCastTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D276FD8B12C83960A0D11B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoundCastTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		917E32F12117744500669656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				917E32FB2117744500669656 /* ViewController.swift in Sources */,
+				917E32F92117744500669656 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		917E33052117744600669656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				917E330E2117744600669656 /* SoundCastTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		917E330B2117744600669656 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 917E32F42117744500669656 /* SoundCast */;
+			targetProxy = 917E330A2117744600669656 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		917E32FC2117744500669656 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				917E32FD2117744500669656 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		917E33012117744600669656 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				917E33022117744600669656 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		917E33102117744600669656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		917E33112117744600669656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		917E33132117744600669656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24F12ADD95C605C6B88382D0 /* Pods-SoundCast.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SoundCast/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Dj.SoundCast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		917E33142117744600669656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F304255C193ED0D9D66FAE4 /* Pods-SoundCast.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SoundCast/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Dj.SoundCast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		917E33162117744600669656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5368F07C1F86768ECC14DCEA /* Pods-SoundCastTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SoundCastTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Dj.SoundCastTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoundCast.app/SoundCast";
+			};
+			name = Debug;
+		};
+		917E33172117744600669656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD9465F9E9E99D63F777C311 /* Pods-SoundCastTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SoundCastTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Dj.SoundCastTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoundCast.app/SoundCast";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		917E32F02117744500669656 /* Build configuration list for PBXProject "SoundCast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				917E33102117744600669656 /* Debug */,
+				917E33112117744600669656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		917E33122117744600669656 /* Build configuration list for PBXNativeTarget "SoundCast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				917E33132117744600669656 /* Debug */,
+				917E33142117744600669656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		917E33152117744600669656 /* Build configuration list for PBXNativeTarget "SoundCastTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				917E33162117744600669656 /* Debug */,
+				917E33172117744600669656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 917E32ED2117744500669656 /* Project object */;
+}
