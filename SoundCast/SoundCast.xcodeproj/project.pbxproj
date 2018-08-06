@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		88B440DBD97420CB20623A57 /* Pods_SoundCastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3727FC6C889BE2C1D29C9B /* Pods_SoundCastTests.framework */; };
+		91604BF42118D58D00429D5B /* SongItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604BF32118D58D00429D5B /* SongItem.swift */; };
+		91604BF72118DAC000429D5B /* SongsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604BF62118DAC000429D5B /* SongsListViewController.swift */; };
+		91604BFA2118DAFB00429D5B /* SongsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604BF92118DAFB00429D5B /* SongsListCell.swift */; };
 		917E32F92117744500669656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917E32F82117744500669656 /* AppDelegate.swift */; };
-		917E32FB2117744500669656 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917E32FA2117744500669656 /* ViewController.swift */; };
 		917E32FE2117744500669656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 917E32FC2117744500669656 /* Main.storyboard */; };
 		917E33002117744600669656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 917E32FF2117744600669656 /* Assets.xcassets */; };
 		917E33032117744600669656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 917E33012117744600669656 /* LaunchScreen.storyboard */; };
 		917E330E2117744600669656 /* SoundCastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917E330D2117744600669656 /* SoundCastTests.swift */; };
+		917E331B2118C3F300669656 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917E331A2118C3F300669656 /* NetworkManager.swift */; };
+		917E331D2118C7E800669656 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917E331C2118C7E800669656 /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		BBDB1614E30D243E7D13519F /* Pods_SoundCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF1E27642931C5A47974519 /* Pods_SoundCast.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,9 +36,11 @@
 		5368F07C1F86768ECC14DCEA /* Pods-SoundCastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCastTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCastTests/Pods-SoundCastTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7CF1E27642931C5A47974519 /* Pods_SoundCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F304255C193ED0D9D66FAE4 /* Pods-SoundCast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCast.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCast/Pods-SoundCast.release.xcconfig"; sourceTree = "<group>"; };
+		91604BF32118D58D00429D5B /* SongItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongItem.swift; sourceTree = "<group>"; };
+		91604BF62118DAC000429D5B /* SongsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListViewController.swift; sourceTree = "<group>"; };
+		91604BF92118DAFB00429D5B /* SongsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListCell.swift; sourceTree = "<group>"; };
 		917E32F52117744500669656 /* SoundCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		917E32F82117744500669656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		917E32FA2117744500669656 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		917E32FD2117744500669656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		917E32FF2117744600669656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		917E33022117744600669656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +48,9 @@
 		917E33092117744600669656 /* SoundCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundCastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		917E330D2117744600669656 /* SoundCastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCastTests.swift; sourceTree = "<group>"; };
 		917E330F2117744600669656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		917E331A2118C3F300669656 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		917E331C2118C7E800669656 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		917E331E2118C7EC00669656 /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3727FC6C889BE2C1D29C9B /* Pods_SoundCastTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundCastTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9465F9E9E99D63F777C311 /* Pods-SoundCastTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCastTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCastTests/Pods-SoundCastTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				917E331D2118C7E800669656 /* Alamofire.framework in Frameworks */,
 				BBDB1614E30D243E7D13519F /* Pods_SoundCast.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +87,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		91604BF22118D56D00429D5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91604BF32118D58D00429D5B /* SongItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		91604BF52118DAA800429D5B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				91604BF62118DAC000429D5B /* SongsListViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		91604BF82118DAE500429D5B /* Views & Cells */ = {
+			isa = PBXGroup;
+			children = (
+				91604BF92118DAFB00429D5B /* SongsListCell.swift */,
+			);
+			path = "Views & Cells";
+			sourceTree = "<group>";
+		};
 		917E32EC2117744500669656 = {
 			isa = PBXGroup;
 			children = (
@@ -100,8 +134,11 @@
 		917E32F72117744500669656 /* SoundCast */ = {
 			isa = PBXGroup;
 			children = (
+				91604BF82118DAE500429D5B /* Views & Cells */,
+				91604BF52118DAA800429D5B /* Controllers */,
+				91604BF22118D56D00429D5B /* Model */,
+				917E33192118C3D000669656 /* Networking */,
 				917E32F82117744500669656 /* AppDelegate.swift */,
-				917E32FA2117744500669656 /* ViewController.swift */,
 				917E32FC2117744500669656 /* Main.storyboard */,
 				917E32FF2117744600669656 /* Assets.xcassets */,
 				917E33012117744600669656 /* LaunchScreen.storyboard */,
@@ -119,9 +156,19 @@
 			path = SoundCastTests;
 			sourceTree = "<group>";
 		};
+		917E33192118C3D000669656 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				917E331A2118C3F300669656 /* NetworkManager.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		BB824015B00ACCA0A30612D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				917E331E2118C7EC00669656 /* AlamofireImage.framework */,
+				917E331C2118C7E800669656 /* Alamofire.framework */,
 				7CF1E27642931C5A47974519 /* Pods_SoundCast.framework */,
 				9D3727FC6C889BE2C1D29C9B /* Pods_SoundCastTests.framework */,
 			);
@@ -139,6 +186,7 @@
 				917E32F12117744500669656 /* Sources */,
 				917E32F22117744500669656 /* Frameworks */,
 				917E32F32117744500669656 /* Resources */,
+				D23CC863C3D0DFBDDB0B815D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,7 +205,6 @@
 				917E33052117744600669656 /* Sources */,
 				917E33062117744600669656 /* Frameworks */,
 				917E33072117744600669656 /* Resources */,
-				2214A1DD95D1DB7A58220077 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -246,26 +293,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2214A1DD95D1DB7A58220077 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SoundCastTests/Pods-SoundCastTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoundCastTests/Pods-SoundCastTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2D276FD8B12C83960A0D11B4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -284,6 +311,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D23CC863C3D0DFBDDB0B815D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SoundCast/Pods-SoundCast-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoundCast/Pods-SoundCast-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -291,8 +336,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				917E32FB2117744500669656 /* ViewController.swift in Sources */,
+				91604BFA2118DAFB00429D5B /* SongsListCell.swift in Sources */,
+				917E331B2118C3F300669656 /* NetworkManager.swift in Sources */,
+				91604BF72118DAC000429D5B /* SongsListViewController.swift in Sources */,
 				917E32F92117744500669656 /* AppDelegate.swift in Sources */,
+				91604BF42118D58D00429D5B /* SongItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
