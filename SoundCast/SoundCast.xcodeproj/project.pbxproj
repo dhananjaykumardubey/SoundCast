@@ -11,6 +11,10 @@
 		91604BF42118D58D00429D5B /* SongItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604BF32118D58D00429D5B /* SongItem.swift */; };
 		91604BF72118DAC000429D5B /* SongsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604BF62118DAC000429D5B /* SongsListViewController.swift */; };
 		91604BFA2118DAFB00429D5B /* SongsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604BF92118DAFB00429D5B /* SongsListCell.swift */; };
+		91604BFC211A1B3F00429D5B /* SongListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91604BFB211A1B3F00429D5B /* SongListCell.xib */; };
+		91604C03211A23B000429D5B /* Songs+Storyboards copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604C02211A23B000429D5B /* Songs+Storyboards copy.swift */; };
+		91604C06211A23D700429D5B /* ThreadUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604C05211A23D700429D5B /* ThreadUtils.swift */; };
+		91604C08211A257A00429D5B /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604C07211A257A00429D5B /* ImageDownloader.swift */; };
 		917E32F92117744500669656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917E32F82117744500669656 /* AppDelegate.swift */; };
 		917E32FE2117744500669656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 917E32FC2117744500669656 /* Main.storyboard */; };
 		917E33002117744600669656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 917E32FF2117744600669656 /* Assets.xcassets */; };
@@ -39,6 +43,10 @@
 		91604BF32118D58D00429D5B /* SongItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongItem.swift; sourceTree = "<group>"; };
 		91604BF62118DAC000429D5B /* SongsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListViewController.swift; sourceTree = "<group>"; };
 		91604BF92118DAFB00429D5B /* SongsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListCell.swift; sourceTree = "<group>"; };
+		91604BFB211A1B3F00429D5B /* SongListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongListCell.xib; sourceTree = "<group>"; };
+		91604C02211A23B000429D5B /* Songs+Storyboards copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Songs+Storyboards copy.swift"; sourceTree = "<group>"; };
+		91604C05211A23D700429D5B /* ThreadUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadUtils.swift; sourceTree = "<group>"; };
+		91604C07211A257A00429D5B /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		917E32F52117744500669656 /* SoundCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		917E32F82117744500669656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		917E32FD2117744500669656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,8 +115,25 @@
 			isa = PBXGroup;
 			children = (
 				91604BF92118DAFB00429D5B /* SongsListCell.swift */,
+				91604BFB211A1B3F00429D5B /* SongListCell.xib */,
 			);
 			path = "Views & Cells";
+			sourceTree = "<group>";
+		};
+		91604C01211A23A400429D5B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				91604C02211A23B000429D5B /* Songs+Storyboards copy.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		91604C04211A23C400429D5B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				91604C05211A23D700429D5B /* ThreadUtils.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		917E32EC2117744500669656 = {
@@ -134,6 +159,8 @@
 		917E32F72117744500669656 /* SoundCast */ = {
 			isa = PBXGroup;
 			children = (
+				91604C04211A23C400429D5B /* Utilities */,
+				91604C01211A23A400429D5B /* Extensions */,
 				91604BF82118DAE500429D5B /* Views & Cells */,
 				91604BF52118DAA800429D5B /* Controllers */,
 				91604BF22118D56D00429D5B /* Model */,
@@ -160,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				917E331A2118C3F300669656 /* NetworkManager.swift */,
+				91604C07211A257A00429D5B /* ImageDownloader.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -259,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91604BFC211A1B3F00429D5B /* SongListCell.xib in Resources */,
 				917E33032117744600669656 /* LaunchScreen.storyboard in Resources */,
 				917E33002117744600669656 /* Assets.xcassets in Resources */,
 				917E32FE2117744500669656 /* Main.storyboard in Resources */,
@@ -337,6 +366,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				91604BFA2118DAFB00429D5B /* SongsListCell.swift in Sources */,
+				91604C03211A23B000429D5B /* Songs+Storyboards copy.swift in Sources */,
+				91604C08211A257A00429D5B /* ImageDownloader.swift in Sources */,
+				91604C06211A23D700429D5B /* ThreadUtils.swift in Sources */,
 				917E331B2118C3F300669656 /* NetworkManager.swift in Sources */,
 				91604BF72118DAC000429D5B /* SongsListViewController.swift in Sources */,
 				917E32F92117744500669656 /* AppDelegate.swift in Sources */,

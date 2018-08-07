@@ -8,20 +8,30 @@
 
 import Foundation
 
-struct SongItem {
+protocol SongItemInitializer {
+    init(withSongData: [String: Any])
+}
+
+struct SongItem: SongItemInitializer {
     
+    // MARK: private static constants
     private static let idKey = "id"
     private static let titleKey = "title"
     private static let songUrlKey = "link"
     private static let thumbnailKey = "thumbnail"
     
+    // MARK:  Constants
+    private let songThumbnailLink: String?
     
     let songId: Int?
     let songTitle: String?
     let songLink: String?
-    let songThumbnailLink: String?
     
-    init(withSongs songData: [String: Any]) {
+    // MARK: Variable
+    var songImageData: Data?
+    
+    // MARK: Initializer
+    init(withSongData songData: [String: Any]) {
         
         let selfType = type(of: self)
         
@@ -29,5 +39,18 @@ struct SongItem {
         self.songTitle = songData[selfType.titleKey] as? String
         self.songLink = songData[selfType.songUrlKey] as? String
         self.songThumbnailLink = songData[selfType.thumbnailKey] as? String
+    }
+    
+    // MARK: Private methods.
+    private func fetchSongImageData(fromURL urlString: String?) {
+        
+        guard let urlString = urlString else {
+            return
+        }
+        
+        ImageDownloader.fetchSongImage(fromURL: urlString) { imageData in
+            self.songImageData = imageData
+        }
+        
     }
 }

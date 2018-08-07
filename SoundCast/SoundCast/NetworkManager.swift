@@ -9,25 +9,33 @@
 import Foundation
 import Alamofire
 
-class NetworkManager {
+private enum Constant {
+    static let songsKey = "songs"
+}
+
+class NetworkManager<T: SongItemInitializer> {
     
-    private static let songsKey = "songs"
+   // private static let url = "https://www.jasonbase.com/things/zKWW.json"
     
-    typealias Completion = ([[String: Any]]?) -> Void
+    typealias Completion = ([T]?) -> Void
     
-    static func fetchSongsList(completion: @escaping Completion) {
-        
-        guard let urlString = URL(string: "https://www.jasonbase.com/things/zKWW.json") else {
-            return
-        }
-        
-        Alamofire.request(urlString).responseJSON { response in
+    static func fetchSongsList(fromURL url: String, completion: @escaping Completion) {
+
+        Alamofire.request(url).responseJSON { response in
             if let result = response.result.value as? [String: Any],
-                let responseData = result[self.songsKey] as? [[String: Any]] {
-                completion(responseData)
+                let responseData = result[Constant.songsKey] as? [[String: Any]] {
+                
+                completion(self.parse(withSongsData: responseData))
+                
             } else {
+                
                 completion(nil)
+                
             }
         }
+    }
+    
+    private static func parse(withSongsData responseData: [[String: Any]]) -> [T] {
+        return responseData.map { T(withSongData: $0) }
     }
 }

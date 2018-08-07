@@ -11,4 +11,15 @@ import UIKit
 
 class SongsListCell: UITableViewCell {
     
+    static let reusableIdentifier = "SongsListCellIdentifier"
+    
+    @IBOutlet private weak var songImageView: UIImageView! {
+        didSet {
+            self.songImageView.layer.cornerRadius = 30.0
+        }
+    }
+    
+    @IBOutlet private weak var songTitle: UILabel!
+    
+    
 }
