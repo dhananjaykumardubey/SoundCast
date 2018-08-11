@@ -21,36 +21,19 @@ struct SongItem: SongItemInitializer {
     private static let thumbnailKey = "thumbnail"
     
     // MARK:  Constants
-    private let songThumbnailLink: String?
-    
+    let songThumbnailLink: String?
     let songId: Int?
     let songTitle: String?
-    let songLink: String?
-    
-    // MARK: Variable
-    var songImageData: Data?
-    
-    // MARK: Initializer
+    let songLink: URL?
+
     init(withSongData songData: [String: Any]) {
         
         let selfType = type(of: self)
         
         self.songId = songData[selfType.idKey] as? Int
         self.songTitle = songData[selfType.titleKey] as? String
-        self.songLink = songData[selfType.songUrlKey] as? String
+        let songUrl = songData[selfType.songUrlKey] as? String
+        self.songLink = URL(string: songUrl ?? "")
         self.songThumbnailLink = songData[selfType.thumbnailKey] as? String
-    }
-    
-    // MARK: Private methods.
-    private func fetchSongImageData(fromURL urlString: String?) {
-        
-        guard let urlString = urlString else {
-            return
-        }
-        
-        ImageDownloader.fetchSongImage(fromURL: urlString) { imageData in
-            self.songImageData = imageData
-        }
-        
     }
 }

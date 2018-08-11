@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		88B440DBD97420CB20623A57 /* Pods_SoundCastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3727FC6C889BE2C1D29C9B /* Pods_SoundCastTests.framework */; };
+		911AE12B211B798C00DDE194 /* SongsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911AE12A211B798C00DDE194 /* SongsDetailViewController.swift */; };
 		91604BF42118D58D00429D5B /* SongItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604BF32118D58D00429D5B /* SongItem.swift */; };
 		91604BF72118DAC000429D5B /* SongsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604BF62118DAC000429D5B /* SongsListViewController.swift */; };
 		91604BFA2118DAFB00429D5B /* SongsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604BF92118DAFB00429D5B /* SongsListCell.swift */; };
 		91604BFC211A1B3F00429D5B /* SongListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91604BFB211A1B3F00429D5B /* SongListCell.xib */; };
-		91604C03211A23B000429D5B /* Songs+Storyboards copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604C02211A23B000429D5B /* Songs+Storyboards copy.swift */; };
+		91604C03211A23B000429D5B /* Songs+Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604C02211A23B000429D5B /* Songs+Storyboards.swift */; };
 		91604C06211A23D700429D5B /* ThreadUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604C05211A23D700429D5B /* ThreadUtils.swift */; };
 		91604C08211A257A00429D5B /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604C07211A257A00429D5B /* ImageDownloader.swift */; };
+		9176EEFB211C922F00CDA58D /* SongsTimeStampTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176EEFA211C922F00CDA58D /* SongsTimeStampTracker.swift */; };
+		9176EEFD211C9DB800CDA58D /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176EEFC211C9DB800CDA58D /* MusicPlayer.swift */; };
+		9179F3D9211C841D005AA625 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9179F3D8211C841D005AA625 /* AlamofireImage.framework */; };
 		917E32F92117744500669656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917E32F82117744500669656 /* AppDelegate.swift */; };
 		917E32FE2117744500669656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 917E32FC2117744500669656 /* Main.storyboard */; };
 		917E33002117744600669656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 917E32FF2117744600669656 /* Assets.xcassets */; };
@@ -40,13 +44,17 @@
 		5368F07C1F86768ECC14DCEA /* Pods-SoundCastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCastTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCastTests/Pods-SoundCastTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7CF1E27642931C5A47974519 /* Pods_SoundCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F304255C193ED0D9D66FAE4 /* Pods-SoundCast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCast.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCast/Pods-SoundCast.release.xcconfig"; sourceTree = "<group>"; };
+		911AE12A211B798C00DDE194 /* SongsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsDetailViewController.swift; sourceTree = "<group>"; };
 		91604BF32118D58D00429D5B /* SongItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongItem.swift; sourceTree = "<group>"; };
 		91604BF62118DAC000429D5B /* SongsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListViewController.swift; sourceTree = "<group>"; };
 		91604BF92118DAFB00429D5B /* SongsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListCell.swift; sourceTree = "<group>"; };
 		91604BFB211A1B3F00429D5B /* SongListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongListCell.xib; sourceTree = "<group>"; };
-		91604C02211A23B000429D5B /* Songs+Storyboards copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Songs+Storyboards copy.swift"; sourceTree = "<group>"; };
+		91604C02211A23B000429D5B /* Songs+Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Songs+Storyboards.swift"; sourceTree = "<group>"; };
 		91604C05211A23D700429D5B /* ThreadUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadUtils.swift; sourceTree = "<group>"; };
 		91604C07211A257A00429D5B /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		9176EEFA211C922F00CDA58D /* SongsTimeStampTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsTimeStampTracker.swift; sourceTree = "<group>"; };
+		9176EEFC211C9DB800CDA58D /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		9179F3D8211C841D005AA625 /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		917E32F52117744500669656 /* SoundCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		917E32F82117744500669656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		917E32FD2117744500669656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9179F3D9211C841D005AA625 /* AlamofireImage.framework in Frameworks */,
 				917E331D2118C7E800669656 /* Alamofire.framework in Frameworks */,
 				BBDB1614E30D243E7D13519F /* Pods_SoundCast.framework in Frameworks */,
 			);
@@ -107,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				91604BF62118DAC000429D5B /* SongsListViewController.swift */,
+				911AE12A211B798C00DDE194 /* SongsDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -123,7 +133,7 @@
 		91604C01211A23A400429D5B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				91604C02211A23B000429D5B /* Songs+Storyboards copy.swift */,
+				91604C02211A23B000429D5B /* Songs+Storyboards.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -134,6 +144,15 @@
 				91604C05211A23D700429D5B /* ThreadUtils.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		9176EEF9211C920C00CDA58D /* SongsLogic */ = {
+			isa = PBXGroup;
+			children = (
+				9176EEFA211C922F00CDA58D /* SongsTimeStampTracker.swift */,
+				9176EEFC211C9DB800CDA58D /* MusicPlayer.swift */,
+			);
+			name = SongsLogic;
 			sourceTree = "<group>";
 		};
 		917E32EC2117744500669656 = {
@@ -159,6 +178,7 @@
 		917E32F72117744500669656 /* SoundCast */ = {
 			isa = PBXGroup;
 			children = (
+				9176EEF9211C920C00CDA58D /* SongsLogic */,
 				91604C04211A23C400429D5B /* Utilities */,
 				91604C01211A23A400429D5B /* Extensions */,
 				91604BF82118DAE500429D5B /* Views & Cells */,
@@ -195,6 +215,7 @@
 		BB824015B00ACCA0A30612D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9179F3D8211C841D005AA625 /* AlamofireImage.framework */,
 				917E331E2118C7EC00669656 /* AlamofireImage.framework */,
 				917E331C2118C7E800669656 /* Alamofire.framework */,
 				7CF1E27642931C5A47974519 /* Pods_SoundCast.framework */,
@@ -348,10 +369,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SoundCast/Pods-SoundCast-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -365,12 +388,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9176EEFD211C9DB800CDA58D /* MusicPlayer.swift in Sources */,
+				9176EEFB211C922F00CDA58D /* SongsTimeStampTracker.swift in Sources */,
 				91604BFA2118DAFB00429D5B /* SongsListCell.swift in Sources */,
-				91604C03211A23B000429D5B /* Songs+Storyboards copy.swift in Sources */,
+				91604C03211A23B000429D5B /* Songs+Storyboards.swift in Sources */,
 				91604C08211A257A00429D5B /* ImageDownloader.swift in Sources */,
 				91604C06211A23D700429D5B /* ThreadUtils.swift in Sources */,
 				917E331B2118C3F300669656 /* NetworkManager.swift in Sources */,
 				91604BF72118DAC000429D5B /* SongsListViewController.swift in Sources */,
+				911AE12B211B798C00DDE194 /* SongsDetailViewController.swift in Sources */,
 				917E32F92117744500669656 /* AppDelegate.swift in Sources */,
 				91604BF42118D58D00429D5B /* SongItem.swift in Sources */,
 			);
@@ -465,7 +491,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -519,7 +545,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

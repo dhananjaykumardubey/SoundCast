@@ -1,4 +1,4 @@
-//
+
 //  SongsListCell.swift
 //  SoundCast
 //
@@ -12,14 +12,29 @@ import UIKit
 class SongsListCell: UITableViewCell {
     
     static let reusableIdentifier = "SongsListCellIdentifier"
+    static let nibName = "SongListCell"
     
-    @IBOutlet private weak var songImageView: UIImageView! {
-        didSet {
-            self.songImageView.layer.cornerRadius = 30.0
-        }
-    }
-    
+    @IBOutlet private weak var songImageView: UIImageView!
     @IBOutlet private weak var songTitle: UILabel!
     
+
+    func configureSongItem(withSong songItem: SongItem) {
+        
+        self.songTitle.text = songItem.songTitle
+        
+        guard let songUrl = songItem.songThumbnailLink else {
+            return
+        }
+        
+        ImageDownloader.fetchSongImage(fromURL: songUrl) { image in
+            performOnMain {
+                if let image = image {
+                    self.songImageView.image = image
+                } else {
+                     self.songImageView.image = UIImage(named: "")
+                }
+            }
+        }
+    }
     
 }

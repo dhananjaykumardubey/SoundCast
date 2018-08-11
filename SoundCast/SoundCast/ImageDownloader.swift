@@ -8,21 +8,25 @@
 
 import Foundation
 import Alamofire
+import AlamofireImage
 
 class ImageDownloader {
     
-    typealias Completion = (Data?) -> Void
+    typealias Completion = (UIImage?) -> Void
     
     static func fetchSongImage(fromURL url: String, completion: @escaping Completion) {
         
-        Alamofire.request(url).responseData { response in
+        Alamofire.request(url).responseImage { response in
             
-            guard response.error != nil,
-                let responseData = response.data else {
-               return completion(nil)
+            if let image = response.result.value {
+                
+                completion(image)
+                
+            } else {
+                
+                completion(nil)
+                
             }
-            
-            completion(responseData)
         }
     }
 }
