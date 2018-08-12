@@ -1,0 +1,6 @@
+framework module Pods_SoundCastTests {
+  umbrella header "Pods-SoundCastTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
