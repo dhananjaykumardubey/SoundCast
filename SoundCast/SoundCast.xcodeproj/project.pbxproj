@@ -28,6 +28,8 @@
 		919206FA21201506009DD3CA /* MusicResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919206F921201506009DD3CA /* MusicResource.swift */; };
 		919206FC21204B54009DD3CA /* SongItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919206FB21204B54009DD3CA /* SongItemTests.swift */; };
 		919206FE21205133009DD3CA /* CMTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919206FD21205133009DD3CA /* CMTimeTests.swift */; };
+		9192070021206D04009DD3CA /* UIViewController+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919206FF21206D04009DD3CA /* UIViewController+ActivityIndicator.swift */; };
+		9192070221206D32009DD3CA /* ActivityIndicatorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9192070121206D32009DD3CA /* ActivityIndicatorProvider.swift */; };
 		BBDB1614E30D243E7D13519F /* Pods_SoundCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF1E27642931C5A47974519 /* Pods_SoundCast.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 		919206F921201506009DD3CA /* MusicResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicResource.swift; sourceTree = "<group>"; };
 		919206FB21204B54009DD3CA /* SongItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongItemTests.swift; sourceTree = "<group>"; };
 		919206FD21205133009DD3CA /* CMTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMTimeTests.swift; sourceTree = "<group>"; };
+		919206FF21206D04009DD3CA /* UIViewController+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityIndicator.swift"; sourceTree = "<group>"; };
+		9192070121206D32009DD3CA /* ActivityIndicatorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorProvider.swift; sourceTree = "<group>"; };
 		9D3727FC6C889BE2C1D29C9B /* Pods_SoundCastTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundCastTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9465F9E9E99D63F777C311 /* Pods-SoundCastTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCastTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCastTests/Pods-SoundCastTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +145,7 @@
 				9107F87F211F53620068DE0C /* Array+Addition.swift */,
 				9107F885211F74E50068DE0C /* CMTime+TimeInterval.swift */,
 				9107F887211F75360068DE0C /* AVPlayer+CurrentTimeInterval.swift */,
+				919206FF21206D04009DD3CA /* UIViewController+ActivityIndicator.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				91604C05211A23D700429D5B /* ThreadUtils.swift */,
+				9192070121206D32009DD3CA /* ActivityIndicatorProvider.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -399,11 +405,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SoundCast/Pods-SoundCast-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -417,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9192070021206D04009DD3CA /* UIViewController+ActivityIndicator.swift in Sources */,
 				9176EEFD211C9DB800CDA58D /* MusicPlayer.swift in Sources */,
 				9107F880211F53620068DE0C /* Array+Addition.swift in Sources */,
 				9107F886211F74E50068DE0C /* CMTime+TimeInterval.swift in Sources */,
@@ -431,6 +440,7 @@
 				917E32F92117744500669656 /* AppDelegate.swift in Sources */,
 				91604BF42118D58D00429D5B /* SongItem.swift in Sources */,
 				9107F888211F75360068DE0C /* AVPlayer+CurrentTimeInterval.swift in Sources */,
+				9192070221206D32009DD3CA /* ActivityIndicatorProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

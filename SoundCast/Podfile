@@ -6,6 +6,7 @@ target 'SoundCast' do
   use_frameworks!
   pod 'Alamofire'
   pod 'Kingfisher'
+  pod 'MBProgressHUD'
   # Pods for SoundCast
 
   target 'SoundCastTests' do

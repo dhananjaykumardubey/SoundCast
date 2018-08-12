@@ -14,6 +14,7 @@ final class SongsListViewController: UIViewController {
     
     // MARK: Static constants
     private static let rowHeightConstant: CGFloat = 100.0
+    private static let loadingMessage = "Please wait..."
     
     // MARK: private variables
     private var songsList: [SongItem]?
@@ -41,11 +42,13 @@ final class SongsListViewController: UIViewController {
     }
     
     private func fetchSongsList() {
+        self.showActivity(withTitle: nil, andMessage: type(of: self).loadingMessage)
         let handle: SongService.CompletionHandler = { [weak self] response in
             switch response {
             case .success(let songs):
                 self?.songsList = songs
                 performOnMain {
+                    self?.hideActivity()
                     self?.tableView.reloadData()
                 }
                 
