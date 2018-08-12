@@ -6,8 +6,8 @@
 //  Copyright © 2018 Dhananjay Kumar Dubey. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import Kingfisher
 
 class SongsListCell: UITableViewCell {
     
@@ -22,19 +22,9 @@ class SongsListCell: UITableViewCell {
         
         self.songTitle.text = songItem.songTitle
         
-        guard let songUrl = songItem.songThumbnailLink else {
-            return
-        }
+        guard let imageURL = songItem.songThumbnailLink else { return }
+        self.songImageView?.kf.setImage(with: imageURL)
         
-        ImageDownloader.fetchSongImage(fromURL: songUrl) { image in
-            performOnMain {
-                if let image = image {
-                    self.songImageView.image = image
-                } else {
-                     self.songImageView.image = UIImage(named: "")
-                }
-            }
-        }
     }
     
 }

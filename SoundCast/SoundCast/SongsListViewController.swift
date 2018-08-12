@@ -12,7 +12,6 @@ import UIKit
 final class SongsListViewController: UIViewController {
     
     // MARK: Static constants
-    private static let url = "https://www.jasonbase.com/things/zKWW.json"
     private static let rowHeightConstant: CGFloat = 100.0
     
     // MARK: private variables
@@ -35,12 +34,15 @@ final class SongsListViewController: UIViewController {
     }
     
     private func fetchSongsList() {
-        NetworkManager<SongItem>.fetchSongsList(fromURL: type(of: self).url, completion: { [weak self] songs in
+        
+        let handle: NetworkManager<SongItem>.Completion = { [weak self] songs in
             self?.songsList = songs
             performOnMain {
                 self?.tableView.reloadData()
             }
-        })
+        }
+        
+        NetworkManager.fetchSongsList(completion: handle)
     }
 }
 
@@ -49,9 +51,7 @@ extension SongsListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let songsList = self.songsList else {
-            return
-        }
+        guard let songsList = self.songsList else { return }
         
         let songsDetailVC = SongsDetailViewController.instantiateSongsDetail(withSongsList: songsList, forIndex: indexPath.row)
         

@@ -9,77 +9,109 @@
 import Foundation
 import AVFoundation
 
-class MusicPlayer: NSObject {
-    
-    private let player: AVAudioPlayer
-    private var updateTimer = Timer()
-    
-    weak var delegate: SongPlayerDelegate?
-    
-    
-    init(contentsOfURL url: URL) throws {
-        do {
-            try self.player = AVAudioPlayer(contentsOf: url)
-            super.init()
-            self.player.delegate = self
-            
-        } catch let error {
-            player = AVAudioPlayer()
-            super.init()
-            throw error
-        }
+final class MusicPlayer {
+    private static let defaultTimeInterval = CMTime(seconds: 0.05, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+    enum State {
+        case playing
+        case paused
+        case stopped
     }
     
-    @objc private func update() {
-        self.delegate?.musicPlayer(self, didUpdateTimeStamp: SongsTimeStamp(seconds: self.player.currentTime))
+    struct Progress {
+        let duration: TimeInterval
+        let currentTime: TimeInterval
+        let percentCompleted: Double
+    }
+    enum Event {
+        case didBegin
+        case progress(Progress)
+        case didEnd
+    }
+    
+    typealias EventCallback = (Event) -> Void
+    
+    private let player: AVPlayer
+    private(set) var state: State
+    private var timeObserverToken: Any?
+    
+    var observer: EventCallback?
+    
+    init(observer: EventCallback? = nil) {
+        self.player = AVPlayer()
+        self.state = .stopped
+        self.observer = observer
+    }
+    
+    deinit {
+        self.observer = nil
+        self.removePeriodicTimeObserver()
+    }
+    
+    func set(songURL url: URL, andPlayImmediatly immediate: Bool = false) {
+        let item = AVPlayerItem(url: url)
+        self.player.replaceCurrentItem(with: item)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.playerDidFinishPlaying),
+                                               name: .AVPlayerItemDidPlayToEndTime,
+                                               object: item)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.playerDidFinishPlaying),
+                                               name: .AVPlayerItemFailedToPlayToEndTime,
+                                               object: item)
+        immediate ? self.play() : self.stop()
     }
     
     func play() {
-        let timeStamp = SongsTimeStamp(seconds: self.player.currentTime)
-        if !self.player.isPlaying {
+        if self.state != .playing {
             self.player.play()
+            self.addPeriodicTimeObserver()
+            self.state = .playing
         }
-        self.delegate?.musicPlayerDidBeginPlaying(self, atTimeStamp: timeStamp)
-        
-        self.updateTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
-        self.updateTimer.fire()
-        
     }
     
     func pause() {
-        let timeStamp = SongsTimeStamp(seconds: self.player.currentTime)
         self.player.pause()
-        self.delegate?.musicPlayerDidPaused(self, atTimeStamp: timeStamp)
-        self.updateTimer.invalidate()
-        self.update()
+        self.state = .paused
     }
     
     func stop() {
-        let timeStamp = SongsTimeStamp(seconds: self.player.currentTime)
+        self.state = .stopped
+        self.removePeriodicTimeObserver()
         self.player.stop()
-        self.player.currentTime = 0
-        self.delegate?.musicPlayerDidStopped(self, atTimeStamp: timeStamp)
-        self.updateTimer.invalidate()
-        self.update()
     }
     
-    func shuffle() {
+    private func addPeriodicTimeObserver() {
+        guard self.timeObserverToken == nil else { return }
         
-    }
-    
-    func repeatSong() {
-        
-    }
-}
-
-extension MusicPlayer: AVAudioPlayerDelegate {
-    
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        if flag {
-            self.updateTimer.invalidate()
-            self.update()
+        let observationHandle: (CMTime) -> Swift.Void = { [weak self] time in
             
-            // continue to next song if there is any
+            guard let currentItem = self?.player.currentItem else { return }
+            let duration = currentItem.duration
+            let currentTime = time.timeInterval
+            if currentTime == 0 {
+                self?.observer?(.didBegin)
+            }
+            let percentCompleted = currentTime / duration.timeInterval
+            let progress = Progress(duration: duration.timeInterval,
+                                    currentTime: currentTime,
+                                    percentCompleted: percentCompleted)
+            self?.observer?(.progress(progress))
+
         }
+        self.timeObserverToken = self.player.addPeriodicTimeObserver(forInterval: type(of: self).defaultTimeInterval,
+                                                                     queue: DispatchQueue.main,
+                                                                     using: observationHandle)
+    }
+    
+    private func removePeriodicTimeObserver() {
+        if let token = self.timeObserverToken {
+            self.player.removeTimeObserver(token)
+            self.timeObserverToken = nil
+        }
+    }
+    
+    @objc private func playerDidFinishPlaying() {
+        self.stop()
+        self.observer?(.didEnd)
     }
 }

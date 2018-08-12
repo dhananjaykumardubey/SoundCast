@@ -21,7 +21,7 @@ struct SongItem: SongItemInitializer {
     private static let thumbnailKey = "thumbnail"
     
     // MARK:  Constants
-    let songThumbnailLink: String?
+    let songThumbnailLink: URL?
     let songId: Int?
     let songTitle: String?
     let songLink: URL?
@@ -34,6 +34,10 @@ struct SongItem: SongItemInitializer {
         self.songTitle = songData[selfType.titleKey] as? String
         let songUrl = songData[selfType.songUrlKey] as? String
         self.songLink = URL(string: songUrl ?? "")
-        self.songThumbnailLink = songData[selfType.thumbnailKey] as? String
+        if let songThumbnailLink = songData[selfType.thumbnailKey] as? String {
+            self.songThumbnailLink = URL(string: songThumbnailLink)
+        } else {
+            self.songThumbnailLink = nil
+        }
     }
 }

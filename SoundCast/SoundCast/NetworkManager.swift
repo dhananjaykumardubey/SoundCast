@@ -15,11 +15,10 @@ private enum Constant {
 
 class NetworkManager<T: SongItemInitializer> {
     
-   // private static let url = "https://www.jasonbase.com/things/zKWW.json"
-    
     typealias Completion = ([T]?) -> Void
     
-    static func fetchSongsList(fromURL url: String, completion: @escaping Completion) {
+    static func fetchSongsList(fromURL url: String = "https://www.jasonbase.com/things/zKWW.json",
+                               completion: @escaping Completion) {
 
         Alamofire.request(url).responseJSON { response in
             if let result = response.result.value as? [String: Any],
