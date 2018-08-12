@@ -11,6 +11,8 @@
 		9107F880211F53620068DE0C /* Array+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9107F87F211F53620068DE0C /* Array+Addition.swift */; };
 		9107F886211F74E50068DE0C /* CMTime+TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9107F885211F74E50068DE0C /* CMTime+TimeInterval.swift */; };
 		9107F888211F75360068DE0C /* AVPlayer+CurrentTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9107F887211F75360068DE0C /* AVPlayer+CurrentTimeInterval.swift */; };
+		9107F88A211FB4850068DE0C /* SongService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9107F889211FB4850068DE0C /* SongService.swift */; };
+		9107F88C211FBD490068DE0C /* Array+SongItemInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9107F88B211FBD490068DE0C /* Array+SongItemInitializer.swift */; };
 		911AE12B211B798C00DDE194 /* SongsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911AE12A211B798C00DDE194 /* SongsDetailViewController.swift */; };
 		91604BF42118D58D00429D5B /* SongItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604BF32118D58D00429D5B /* SongItem.swift */; };
 		91604BF72118DAC000429D5B /* SongsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604BF62118DAC000429D5B /* SongsListViewController.swift */; };
@@ -46,6 +48,8 @@
 		9107F87F211F53620068DE0C /* Array+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Addition.swift"; sourceTree = "<group>"; };
 		9107F885211F74E50068DE0C /* CMTime+TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime+TimeInterval.swift"; sourceTree = "<group>"; };
 		9107F887211F75360068DE0C /* AVPlayer+CurrentTimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+CurrentTimeInterval.swift"; sourceTree = "<group>"; };
+		9107F889211FB4850068DE0C /* SongService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongService.swift; sourceTree = "<group>"; };
+		9107F88B211FBD490068DE0C /* Array+SongItemInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SongItemInitializer.swift"; sourceTree = "<group>"; };
 		911AE12A211B798C00DDE194 /* SongsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsDetailViewController.swift; sourceTree = "<group>"; };
 		91604BF32118D58D00429D5B /* SongItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongItem.swift; sourceTree = "<group>"; };
 		91604BF62118DAC000429D5B /* SongsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,9 @@
 			children = (
 				91604C02211A23B000429D5B /* Songs+Storyboards.swift */,
 				9107F87F211F53620068DE0C /* Array+Addition.swift */,
+				9107F88B211FBD490068DE0C /* Array+SongItemInitializer.swift */,
+				9107F885211F74E50068DE0C /* CMTime+TimeInterval.swift */,
+				9107F887211F75360068DE0C /* AVPlayer+CurrentTimeInterval.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -141,8 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				91604C05211A23D700429D5B /* ThreadUtils.swift */,
-				9107F885211F74E50068DE0C /* CMTime+TimeInterval.swift */,
-				9107F887211F75360068DE0C /* AVPlayer+CurrentTimeInterval.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				917E331A2118C3F300669656 /* NetworkManager.swift */,
+				9107F889211FB4850068DE0C /* SongService.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -392,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9107F88C211FBD490068DE0C /* Array+SongItemInitializer.swift in Sources */,
 				9176EEFD211C9DB800CDA58D /* MusicPlayer.swift in Sources */,
 				9107F880211F53620068DE0C /* Array+Addition.swift in Sources */,
 				9107F886211F74E50068DE0C /* CMTime+TimeInterval.swift in Sources */,
@@ -400,6 +407,7 @@
 				91604C06211A23D700429D5B /* ThreadUtils.swift in Sources */,
 				917E331B2118C3F300669656 /* NetworkManager.swift in Sources */,
 				91604BF72118DAC000429D5B /* SongsListViewController.swift in Sources */,
+				9107F88A211FB4850068DE0C /* SongService.swift in Sources */,
 				911AE12B211B798C00DDE194 /* SongsDetailViewController.swift in Sources */,
 				917E32F92117744500669656 /* AppDelegate.swift in Sources */,
 				91604BF42118D58D00429D5B /* SongItem.swift in Sources */,

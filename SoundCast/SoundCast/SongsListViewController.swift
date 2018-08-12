@@ -16,6 +16,7 @@ final class SongsListViewController: UIViewController {
     
     // MARK: private variables
     private var songsList: [SongItem]?
+    private let service = SongService()
 
     // MARK: private outlets
     @IBOutlet private weak var tableView: UITableView! {
@@ -35,14 +36,21 @@ final class SongsListViewController: UIViewController {
     
     private func fetchSongsList() {
         
-        let handle: NetworkManager<SongItem>.Completion = { [weak self] songs in
-            self?.songsList = songs
-            performOnMain {
-                self?.tableView.reloadData()
+        let handle: SongService.CompletionHandler = { [weak self] response in
+            switch response {
+            case .success(let songs):
+                self?.songsList = songs
+                performOnMain {
+                    self?.tableView.reloadData()
+                }
+                
+            case .failure(let error):
+                print(error)
             }
+            
         }
         
-        NetworkManager.fetchSongsList(completion: handle)
+        self.service.fetchSongs(using: NetworkManager.self, then: handle)
     }
 }
 
@@ -57,7 +65,6 @@ extension SongsListViewController: UITableViewDelegate {
         
         self.navigationController?.pushViewController(songsDetailVC, animated: true)
     }
-    
 }
 
 // MARK: UITableViewDataSource
@@ -68,12 +75,12 @@ extension SongsListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let songItemCell = tableView.dequeueReusableCell(withIdentifier: SongsListCell.reusableIdentifier) as? SongsListCell, let songsList = self.songsList else {
-            let cell = UITableViewCell(style: .default, reuseIdentifier: SongsListCell.reusableIdentifier)
-            return cell
-       }
+        let cell = tableView.dequeueReusableCell(withIdentifier: SongsListCell.reusableIdentifier,
+                                                 for: indexPath)
         
-        songItemCell.configureSongItem(withSong: songsList[indexPath.row])
-        return songItemCell
+        if let songItemCell = cell as? SongsListCell, let songsList = self.songsList  {
+            songItemCell.configureSongItem(withSong: songsList[indexPath.row])
+        }
+        return cell
     }
 }
