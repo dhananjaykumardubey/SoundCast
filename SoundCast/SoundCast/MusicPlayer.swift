@@ -63,7 +63,8 @@ final class MusicPlayer {
     // MARK: Typealias
     typealias EventCallback = (Event) -> Void
     
-    // MARK;
+    // MARK: public variable
+    
     /// Event observer of type EventCallback
     var observer: EventCallback?
     
