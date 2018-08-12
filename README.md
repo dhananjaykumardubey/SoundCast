@@ -1,12 +1,14 @@
 # SoundCast
 
-# NOTES
+
+
+## NOTE
 
 This is a simple music player, which downloads the list of songs from provided URL using Alamofire. Displays the list of songs with their images on very first screen.
 On click of song, it takes you to next screen where song image and title is displayed along with play, pause, stop, repeat and shuffle functionality. Queue is maintained to play the next song automatically if available.
 Song is also played in background.
 
-## Features
+### Features
 
 * Play
 * Pause
