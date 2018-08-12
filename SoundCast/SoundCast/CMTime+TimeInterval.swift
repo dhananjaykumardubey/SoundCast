@@ -8,7 +8,10 @@
 
 import AVFoundation
 
+/// Extension of CMTime
 extension CMTime {
+    
+    /// Returns time interval after converting the CMTime value into seconds
     var timeInterval: TimeInterval {
         
         return Double(CMTimeGetSeconds(self))

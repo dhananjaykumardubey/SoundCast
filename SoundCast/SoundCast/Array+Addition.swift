@@ -8,9 +8,14 @@
 
 import Foundation
 
+/// Extension on Array
 extension Array {
     
-    func randomIndex(excluding: Index) -> Index {
+    /**
+     Provides random index from array
+     - returns: Random index generated via `arc4random_uniform`
+     */
+    func randomIndex() -> Index {
         return Int(arc4random_uniform(UInt32(self.count)))
     }
 }

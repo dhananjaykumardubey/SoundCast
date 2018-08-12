@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// provides storyboard name
 enum Storyboard: String {
     
     case main = "Main"

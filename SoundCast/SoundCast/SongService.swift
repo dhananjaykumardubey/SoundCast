@@ -11,20 +11,57 @@ import Alamofire
 
 private let songsKey = "songs"
 
+/// Enum to handle different kind of errors.
 enum SongServiceError: Error {
+    /// Throws error when request URL is incorrect
     case invalidRequestURL
+    
+    /// Throws error when response is not recieved
     case invalidResponse
+    
+    /// Provides error title
+    var errorTitle: String {
+        return "Oops!"
+    }
+    
+    /// Provides error message for different error type
+    var errorMessage: String {
+        switch self {
+        case .invalidRequestURL:
+            return "Please check the request URL. Try Again"
+        case .invalidResponse:
+            return "Something went terribly wrong. Please try again later."
+        }
+    }
 }
 
+/// Service layer which calls network manager for API call. This is a intermediate layer between network manager and view controller
 struct SongService {
     
+    // MARK: Type alias for completion handlere of request
     typealias CompletionHandler = (Alamofire.Result<[SongItem]>) -> Void
     
-    let url: URL?
+    // MARK: Private constant
+    private let url: URL?
+    
+    //MARK: Initializer
+    
+    /**
+     Intializes SongService with request URL
+     
+     - parameter url: reuqest URL of type URL? , Default request url = "https://www.jasonbase.com/things/zKWW.json"
+     */
     init(url: URL? = URL(string: "https://www.jasonbase.com/things/zKWW.json")) {
         self.url = url
     }
     
+    /**
+     Request to fetch songs using network manager
+     
+     - parameters:
+         - manager: Instance of type `NetworkManager`
+         - handle: Completion handler callback once response is recieved, is type  of `Result<[SongItem]>`, can be success or failure
+     */
     func fetchSongs(using manager: NetworkManager.Type, then handle: @escaping CompletionHandler) {
         guard let url = self.url else {
             handle(.failure(SongServiceError.invalidRequestURL))
@@ -49,7 +86,7 @@ struct SongService {
         guard
             let jsonResponse = responseData as? [String: Any],
             let songs = jsonResponse[songsKey] as? [[String: Any]]
-        else { throw SongServiceError.invalidResponse }
+            else { throw SongServiceError.invalidResponse }
         
         return songs.compactMap(SongItem.init(withSongData:))
     }

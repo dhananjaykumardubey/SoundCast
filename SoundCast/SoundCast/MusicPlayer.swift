@@ -9,44 +9,90 @@
 import Foundation
 import AVFoundation
 
+/// Music player class which handles the functionality of playing audio
 final class MusicPlayer {
+    
+    // MARK: Private constants
     private static let defaultTimeInterval = CMTime(seconds: 0.05, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
-    enum State {
-        case playing
-        case paused
-        case stopped
-    }
-    
-    struct Progress {
-        let duration: TimeInterval
-        let currentTime: TimeInterval
-        let percentCompleted: Double
-    }
-    enum Event {
-        case didBegin
-        case progress(Progress)
-        case didEnd
-    }
-    
-    typealias EventCallback = (Event) -> Void
-    
     private let player: AVPlayer
     private(set) var state: State
     private var timeObserverToken: Any?
+   
+    // MARK: Enums
+    /// Enum to maintain the state of music player
+    enum State {
+        
+        /// playing, when audio is in playing mode
+        case playing
+        
+        /// paused, when audio is in paused
+        case paused
+        
+        /// stopped, when audio is stopped, and current time is set to zero
+        case stopped
+    }
     
+    /// Enum to maintain the events of player
+    enum Event {
+        
+        /// When player started playing the song
+        case didBegin
+        
+        /// When player is currently playing the song, which also provides the progress of song of struct type - `Progress`
+        case progress(Progress)
+        
+        /// Player stopped playing song, as the song is completed and notification "playerDidFinishPlaying" is observed
+        case didEnd
+    }
+    
+    // MARK: Struct
+    
+    /// Maintains the progress of audio track
+    struct Progress {
+        
+        /// Indicates the duration of the item
+        let duration: TimeInterval
+        
+        /// Current time of audio track, or elapsed time
+        let currentTime: TimeInterval
+        
+        /// provides the percentage compeletion of audio playback
+        let percentCompleted: Double
+    }
+    
+    // MARK: Typealias
+    typealias EventCallback = (Event) -> Void
+    
+    // MARK;
+    /// Event observer of type EventCallback
     var observer: EventCallback?
     
+    // MARK: Initializer
+    
+    /// Intializes `MusicPlayer` with observer
     init(observer: EventCallback? = nil) {
         self.player = AVPlayer()
         self.state = .stopped
         self.observer = observer
     }
     
+    /// Removes the event observer and set the observer to nil in deinitialer
     deinit {
         self.observer = nil
         self.removePeriodicTimeObserver()
     }
     
+    // MARK: Public Apis
+    
+    /**
+     Sets the AVPlayerItem with URL and also observes the completion of audio compelition by checking whether audio played till end time. Also observes whether failure occured before reaching the end time of audio.
+     
+     - parameters:
+        - url: song item url, i.e audion track URL which is used to create an AVPlayerItem
+     
+     - immediate: FLag to check whether song has to be played immediately or not. By default set to FALSE, the caller will have to maintain the state
+     
+     */
     func set(songURL url: URL, andPlayImmediatly immediate: Bool = false) {
         let item = AVPlayerItem(url: url)
         self.player.replaceCurrentItem(with: item)
@@ -54,6 +100,7 @@ final class MusicPlayer {
                                                selector: #selector(self.playerDidFinishPlaying),
                                                name: .AVPlayerItemDidPlayToEndTime,
                                                object: item)
+        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.playerDidFinishPlaying),
                                                name: .AVPlayerItemFailedToPlayToEndTime,
@@ -61,6 +108,7 @@ final class MusicPlayer {
         immediate ? self.play() : self.stop()
     }
     
+    /// Checks whether player is currently playing or not. If not, it plays the audio and starts observing event. Also, state of player is changed to State.playing
     func play() {
         if self.state != .playing {
             self.player.play()
@@ -69,17 +117,20 @@ final class MusicPlayer {
         }
     }
     
+    /// Pauses the audio player and sets the state of player to .paused
     func pause() {
         self.player.pause()
         self.state = .paused
     }
     
+    /// stops the audio player and sets the state of player to .stopped. Also, Removes the event observer
     func stop() {
         self.state = .stopped
         self.removePeriodicTimeObserver()
         self.player.stop()
     }
     
+    // MARK: Private Apis
     private func addPeriodicTimeObserver() {
         guard self.timeObserverToken == nil else { return }
         

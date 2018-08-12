@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// This class is used to display the list of songs downloaded from API
 final class SongsListViewController: UIViewController {
     
     // MARK: Static constants
@@ -17,10 +18,14 @@ final class SongsListViewController: UIViewController {
     // MARK: private variables
     private var songsList: [SongItem]?
     private let service = SongService()
-
+    
     // MARK: private outlets
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
+            guard let image = UIImage(named: MusicResource.listBackgroundImage) else {
+                return
+            }
+            self.tableView.backgroundColor = UIColor(patternImage: image)
             self.tableView.delegate = self
             self.tableView.dataSource = self
             self.tableView.estimatedRowHeight = type(of: self).rowHeightConstant
@@ -29,13 +34,13 @@ final class SongsListViewController: UIViewController {
         }
     }
     
+    // MARK: functions
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchSongsList()
     }
     
     private func fetchSongsList() {
-        
         let handle: SongService.CompletionHandler = { [weak self] response in
             switch response {
             case .success(let songs):
@@ -45,7 +50,7 @@ final class SongsListViewController: UIViewController {
                 }
                 
             case .failure(let error):
-                print(error)
+                self?.showError(error)
             }
             
         }
@@ -56,7 +61,7 @@ final class SongsListViewController: UIViewController {
 
 // MARK: UITableViewDelegates
 extension SongsListViewController: UITableViewDelegate {
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let songsList = self.songsList else { return }
@@ -70,7 +75,7 @@ extension SongsListViewController: UITableViewDelegate {
 // MARK: UITableViewDataSource
 extension SongsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return self.songsList?.count ?? 0
+        return self.songsList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,5 +87,36 @@ extension SongsListViewController: UITableViewDataSource {
             songItemCell.configureSongItem(withSong: songsList[indexPath.row])
         }
         return cell
+    }
+}
+
+// MARK: Alert handler
+extension SongsListViewController {
+    
+    static private let okButtonTitle = "OK"
+    
+    private func showError(_ error: Error) {
+        
+        let title: String
+        let message: String
+        
+        let selfType = type(of: self)
+        
+        if let error = error as? SongServiceError {
+            title = error.errorTitle
+            message = error.errorMessage
+        } else {
+            title = "\((error as NSError).code)"
+            message = error.localizedDescription
+        }
+        
+        let alertViewController = UIAlertController(title: title,
+                                                    message: message,
+                                                    preferredStyle: .alert)
+        
+        alertViewController.addAction(UIAlertAction(title: selfType.okButtonTitle,
+                                                    style: .cancel,
+                                                    handler: nil))
+        self.present(alertViewController, animated: true, completion: nil)
     }
 }
